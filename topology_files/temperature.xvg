@@ -1,0 +1,65 @@
+# This file was created Tue Feb 21 15:56:36 2023
+# Created by:
+#                :-) GROMACS - gmx energy, 2022.1-conda_forge (-:
+# 
+# Executable:   /Users/user1/opt/miniconda3/bin.AVX2_256/gmx
+# Data prefix:  /Users/user1/opt/miniconda3
+# Working dir:  /Users/user1/Desktop/powerpoint_pres/Data_Analysis_Course_by_Nitesh_Kumar/introduction_to_gromacs/water_simulations
+# Command line:
+#   gmx energy -f npt_equilibration.edr -o temperature
+# gmx energy is part of G R O M A C S:
+#
+# Grunge ROck MAChoS
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(K)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Temperature"
+    0.000000    5.458612
+    0.500000  307.627960
+    1.000000  296.146851
+    1.500000  283.464996
+    2.000000  303.517578
+    2.500000  301.710144
+    3.000000  301.305634
+    3.500000  303.146332
+    4.000000  310.987122
+    4.500000  296.944214
+    5.000000  296.089050
+    5.500000  290.547058
+    6.000000  316.011230
+    6.500000  287.142731
+    7.000000  284.036041
+    7.500000  289.936340
+    8.000000  293.608826
+    8.500000  295.840454
+    9.000000  289.461884
+    9.500000  285.455322
+   10.000000  295.976288
+   10.500000  288.474152
+   11.000000  289.733368
+   11.500000  307.407867
+   12.000000  302.779449
+   12.500000  291.648285
+   13.000000  297.850494
+   13.500000  293.807465
+   14.000000  308.521545
+   14.500000  287.266632
+   15.000000  295.788757
+   15.500000  294.266571
+   16.000000  301.009735
+   16.500000  278.894165
+   17.000000  302.956543
+   17.500000  305.877167
+   18.000000  291.041016
+   18.500000  299.266388
+   19.000000  307.522766
+   19.500000  297.857971
+   20.000000  296.710266

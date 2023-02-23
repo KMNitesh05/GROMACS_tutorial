@@ -1,0 +1,64 @@
+title                    = NVT equilibration
+cpp                      = /lib/cpp
+include                  = -I../top
+
+; RUN CONTROL PARAMETERS =
+integrator               = md       ; leap-frog integrator
+dt                       = 0.002    ; 2 fs 
+nsteps                   = 10000000     ; 5000000 * 2 fs = 10 ns
+
+; OUTPUT CONTROL OPTIONS =
+; Output frequency for coords (x), velocities (v) and forces (f) =
+nstxout                  = 1       ; number of steps to write coordinates to output
+nstvout                  = 1       ; number of steps to write velocities to output 
+nstfout                  = 1       ; number of steps to write forces to output     
+; Output frequency for energies to log file and energy file =
+nstlog                   = 1       ; number of steps to write energies to the log file
+nstenergy                = 1      ; number of steps to write energies to energy file 
+; Output frequency and precision for xtc file =
+nstxtcout                = 1
+xtc-precision            = 1
+energygrps               = system
+
+; Neighborsearching
+cutoff-scheme       = Verlet            
+ns_type		    = grid		; search neighboring grid cells
+nstlist		    = 5		; Frequency to update the neighbor list
+rcoulomb	    = 1.4		; short-range electrostatic cutoff (in nm)
+rvdw		    = 1.4		; short-range van der Waals cutoff (in nm)
+rlist           = 1.0
+
+; Electrostatics and VDW
+coulombtype	    = PME	; Particle Mesh Ewald for long-range electrostatics
+pme_order	    = 6		; cubic interpolation
+fourierspacing	= 0.16	; grid spacing for FFT (in nm)
+vdw-type        = Cut-off
+
+; OPTIONS FOR WEAK COUPLING ALGORITHMS =
+; Temperature coupling   =
+tcoupl                   = nose-hoover   ; nose-hoover 
+; Groups to couple separately =
+tc-grps                  = system      ; groups to couple to temperature bath
+;Time constant (ps) and reference temperature (K) =
+tau_t                    = 0.1         ; time constant for coupling (in ps)
+ref_t                    = 298         ; reference temperature for coupling (in K)
+
+; Pressure coupling      =
+Pcoupl                   = no 
+
+; GENERATE VELOCITIES FOR STARTUP RUN =
+gen_vel                  = no        ; Generate velocities according to a Maxwell distribution
+gen_temp                 = 298        ; temperature for Maxwell distribution
+gen_seed                 = -1         ; pseudo random seed is used with -1
+
+
+; Periodic boundary conditions
+pbc		= xyz		    ; 3-D PBC
+
+; OPTIONS FOR BONDS
+constraints              = h-bonds ;  all-bonds. All bonds will be treated as constraints (fixed length)
+continuation             = yes           ; first dynamics run
+constraint_algorithm     = lincs        ; holonomic constraints
+lincs_iter               = 1            ; accuracy of LINCS
+lincs_order              = 4            ; also related to accuracy
+

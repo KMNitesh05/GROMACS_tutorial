@@ -1,0 +1,21 @@
+#!/bin/bash -x
+#SBATCH --job-name="wat_hex"
+#SBATCH --nodes=2
+#SBATCH --ntasks=40
+#SBATCH --export=ALL
+#SBATCH --time=144:00:00
+#SBATCH --array=1-1:1
+
+module load mpich/3.3
+module load intel/20.0
+module load gromacs/16.2_mpi
+
+JOBID=`echo $SLURM_JOBID`
+
+cat $0 > script.$JOBID
+printenv > env.$JOBID
+
+
+srun --ntasks=1 --mpi=pmi2 gmx_mpi_d grompp -f nitrate_nvt_298_40ns_nh.mdp -p topol.top -c npt_water.gro -o nvt_water_prod.tpr -maxwarn 70 >& pre.$JOBID
+
+srun --ntasks=40 --mpi=pmi2 gmx_mpi_d mdrun -deffnm nvt_water_prod  > output.$JOBID

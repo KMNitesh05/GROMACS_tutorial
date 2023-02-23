@@ -1,0 +1,39 @@
+# This file was created Thu Feb 23 13:17:21 2023
+# Created by:
+#                :-) GROMACS - gmx energy, 2022.1-conda_forge (-:
+# 
+# Executable:   /Users/user1/opt/miniconda3/bin.AVX2_256/gmx
+# Data prefix:  /Users/user1/opt/miniconda3
+# Working dir:  /Users/user1/Desktop/powerpoint_pres/Data_Analysis_Course_by_Nitesh_Kumar/introduction_to_gromacs/water_simulations
+# Command line:
+#   gmx energy -f minim.edr -o pe_energy
+# gmx energy is part of G R O M A C S:
+#
+# Great Red Oystrich Makes All Chemists Sane
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  329923.718750
+    1.000000  109299.164062
+    2.000000  58417.781250
+    3.000000  44866.898438
+    4.000000  38810.722656
+    5.000000  27721.093750
+    6.000000  11847.578125
+    7.000000  -299.905273
+    8.000000  -8106.285156
+    9.000000  -9918.025391
+   10.000000  -12496.589844
+   12.000000  -13453.541992
+   13.000000  -17641.066406
+   14.000000  -19606.453125
+   16.000000  -20378.574219

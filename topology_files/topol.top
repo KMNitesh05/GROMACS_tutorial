@@ -1,0 +1,11 @@
+; Include forcefield parameters
+#include "amber99.ff/forcefield.itp"
+
+[ atomtypes ]
+;name	at.num	mass	charge	ptype	sigma	epsilon
+CE	6	12.01	0.0000	A	0.32637	0.47146
+CD	6	12.01	0.0000	A	0.31324	0.60417
+ZR	40	91.224	0.0000	A	0.26780	0.16713
+
+#include "tip3p.itp"
+SOL       900
