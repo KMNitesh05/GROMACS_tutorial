@@ -3,4 +3,4 @@ These files are used to run MD simulation and analysis in GROMACS.
 
 
 
-By: Nitesh Kumar 
+Contact: Nitesh Kumar, nitesh.kumar@wsu.edu
